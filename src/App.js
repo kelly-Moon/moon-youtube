@@ -11,23 +11,30 @@ import Youtube from "./pages/Youtube";
 import Channel from "./pages/Channel";
 import Video from "./pages/Video";
 import Search from "./pages/Search";
+import Header from "./components/section/Header";
+import Main from "./components/section/Main";
+import Footer from "./components/section/Footer";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/today" element={<Today />} />
-        <Route path="/developer" element={<Developer />} />
-        <Route path="/webd" element={<Webd />} />
-        <Route path="/website" element={<Website />} />
-        <Route path="/gsap" element={<Website />} />
-        <Route path="/port" element={<Port />} />
-        <Route path="/youtube" element={<Youtube />} />
-        <Route path="/channel/:channelId" element={<Channel />} />
-        <Route path="/video/:videioId" element={<Video />} />
-        <Route path="/search/:searchId" element={<Search />} />
-      </Routes>
+      <Header />
+      <Main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/today" element={<Today />} />
+          <Route path="/developer" element={<Developer />} />
+          <Route path="/webd" element={<Webd />} />
+          <Route path="/website" element={<Website />} />
+          <Route path="/gsap" element={<Website />} />
+          <Route path="/port" element={<Port />} />
+          <Route path="/youtube" element={<Youtube />} />
+          <Route path="/channel/:channelId" element={<Channel />} />
+          <Route path="/video/:videioId" element={<Video />} />
+          <Route path="/search/:searchId" element={<Search />} />
+        </Routes>
+      </Main>
+      <Footer />
     </BrowserRouter>
   );
 };
