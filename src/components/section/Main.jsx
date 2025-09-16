@@ -1,11 +1,17 @@
 import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
-function Main() {
+const Main = (props) => {
   return (
-    <main id="main" role="main">
-      Main
-    </main>
+    <>
+      <Header />
+      <main id="main" role="main">
+        {props.children}
+      </main>
+      <Footer />
+    </>
   );
-}
+};
 
 export default Main;

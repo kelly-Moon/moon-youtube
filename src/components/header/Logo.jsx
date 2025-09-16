@@ -1,6 +1,6 @@
 import React from "react";
 
-function Logo() {
+const Logo = () => {
   return (
     <h1 className="header__logo">
       <a href="/">
@@ -13,6 +13,6 @@ function Logo() {
       </a>
     </h1>
   );
-}
+};
 
 export default Logo;

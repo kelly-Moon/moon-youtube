@@ -2,7 +2,7 @@ import React from "react";
 import { headerMenus, searchKeyword } from "../../data/header";
 import { Link, useLocation } from "react-router-dom";
 
-function Menu() {
+const Menu = () => {
   const location = useLocation();
   return (
     <nav className="header__menu">
@@ -31,6 +31,6 @@ function Menu() {
       </ul>
     </nav>
   );
-}
+};
 
 export default Menu;

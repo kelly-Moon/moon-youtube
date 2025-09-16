@@ -1,8 +1,8 @@
 import React from "react";
 import Main from "../components/section/Main";
 
-const Search = () => {
-  return <Main>Search</Main>;
+const Not = () => {
+  return <Main>Not</Main>;
 };
 
-export default Search;
+export default Not;
