@@ -1,3 +1,23 @@
+#developer {
+  .developer {
+    // margin-right: 20px;
+
+    .developer__img {
+      // width: 150px;
+      // height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .developer__info {
+      // width: 150px;
+      text-align: center;
+      @include line-one;
+      // padding-bottom: 40px;
+    }
+  }
+}
+
 .developer__inner {
   display: flex;
   flex-wrap: wrap;
@@ -10,14 +30,15 @@
   .developer {
     margin-right: 20px;
 
-    .develpoer__img {
+    .developer__img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
       overflow: hidden;
       margin-bottom: 10px;
+      background-color: pink;
     }
-    .develpoer__info {
+    .developer__info {
       width: 150px;
       text-align: center;
       @include line-one;
@@ -33,7 +54,7 @@
     .developer {
       margin-right: 0;
 
-      .develpoer__img {
+      .developer__img {
         width: 130px;
         height: 130px;
         margin: 10px auto;

@@ -1,26 +1,84 @@
-import React from "react";
-import { developerText } from "../../data/developer";
+import React, { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 
-const Developer = () => {
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { Autoplay, Navigation } from "swiper/modules";
+
+const Developer = ({ videos, title, id }) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 400);
+  }, []);
+
+  const developerClass = loading ? "isLoading" : "isLoaded";
+
   return (
-    <section id="developer">
-      <h2>😎추천 개발자를 소개합니다.</h2>
-      <div className="developer__inner overflow">
-        {developerText.map((develpoer, key) => (
-          <div className="developer" key={key}>
-            <div className="develpoer__img play__icon">
-              <Link to={`/channel/${develpoer.channelId}`}>
-                <img src={develpoer.img} alt={develpoer.name} />
-              </Link>
-            </div>
-            <div className="develpoer__info">
-              <Link to={`/channel/${develpoer.channelId}`}>
-                {develpoer.name}
-              </Link>
-            </div>
-          </div>
-        ))}
+    <section id={id} className={developerClass}>
+      <h2>{title}</h2>
+      <div className="developer__slider">
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={15}
+          navigation={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 5,
+              spaceBetween: 15,
+            },
+            768: {
+              slidesPerView: 6,
+              spaceBetween: 15,
+            },
+            1024: {
+              slidesPerView: 7,
+              spaceBetween: 20,
+            },
+            1240: {
+              slidesPerView: 8,
+              spaceBetween: 20,
+            },
+            1640: {
+              slidesPerView: 9,
+              spaceBetween: 20,
+            },
+            2000: {
+              slidesPerView: 10,
+              spaceBetween: 20,
+            },
+          }}
+          modules={[Navigation, Autoplay]}
+          className="mySwiper"
+        >
+          {videos.map((developer, key) => (
+            <SwiperSlide key={key}>
+              <div className="developer">
+                <div className="developer__img play__icon">
+                  <Link to={`/channel/${developer.channelId}`}>
+                    <img src={developer.img} alt={developer.name} />
+                  </Link>
+                </div>
+                <div className="developer__info">
+                  <Link to={`/channel/${developer.channelId}`}>
+                    {developer.name}
+                  </Link>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );

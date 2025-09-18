@@ -18,11 +18,11 @@ section {
 }
 
 //섹션 로딩 소스
-.isLoding {
+.isLoading {
   opacity: 0;
   transition: opacity 0.5s;
 }
-.isLoded {
+.isLoaded {
   opacity: 1;
   transition: opacity 0.5s;
 }

@@ -9,16 +9,16 @@ const Developer = () => {
       <section id="developerPage">
         <h2>😎추천 개발자를 소개합니다.</h2>
         <div className="developer__inner">
-          {developerText.map((develpoer, key) => (
+          {developerText.map((developer, key) => (
             <div className="developer" key={key}>
-              <div className="develpoer__img play__icon">
-                <Link to={`/channel/${develpoer.channelId}`}>
-                  <img src={develpoer.img} alt={develpoer.name} />
+              <div className="developer__img play__icon">
+                <Link to={`/channel/${developer.channelId}`}>
+                  <img src={developer.img} alt={developer.name} />
                 </Link>
               </div>
-              <div className="develpoer__info">
-                <Link to={`/channel/${develpoer.channelId}`}>
-                  {develpoer.name}
+              <div className="developer__info">
+                <Link to={`/channel/${developer.channelId}`}>
+                  {developer.name}
                 </Link>
               </div>
             </div>
