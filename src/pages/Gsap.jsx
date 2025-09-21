@@ -4,14 +4,14 @@ import VideoCard from "../components/video/VideoCard";
 import { gsapText } from "../data/gsap";
 
 const Gsap = () => {
-  const [loadin, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 300);
   }, []);
 
-  const gaspPageClass = loadin ? "isLoading" : "isLoaded";
+  const gaspPageClass = loading ? "isLoading" : "isLoaded";
   return (
     <Main title="GSAP 사이트" description="GSAP 사이트 튜토리얼 강의입니다.">
       <section id="gsapPage" className={gaspPageClass}>

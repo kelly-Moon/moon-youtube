@@ -35,6 +35,7 @@ const Video = () => {
             <div className="video__play">
               <ReactPlayer
                 playing={true}
+                // url={`https://www.youtube.com/watch?v=${videoId}`}
                 url={`https://www.youtube.com/embed/${videoId}`}
                 width="100%"
                 height="100%"
@@ -45,7 +46,9 @@ const Video = () => {
               <h2 className="video__title">{videoDetail.snippet.title}</h2>
               <div className="video__channel">
                 <div className="id">
-                  <Link to="/channel/">{videoDetail.snippet.channelTitle}</Link>
+                  <Link to={`/channel/${videoDetail.snippet.channelId}`}>
+                    {videoDetail.snippet.channelTitle}
+                  </Link>
                 </div>
                 <div className="count">
                   <span className="view">
